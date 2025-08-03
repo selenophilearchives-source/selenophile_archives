@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Secret Album</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  h2 {
+    margin-bottom: 20px;
+  }
+  input {
+    font-size: 1.2rem;
+    padding: 8px;
+    width: 100px;
+    text-align: center;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #2980b9;
+  }
+</style>
+</head>
+<body>
+
+<h2>Enter 4-digit PIN to access the album:</h2>
+<input type="password" id="pinInput" maxlength="4" autofocus />
+<button onclick="checkPin()">Enter</button>
+
+<script>
+function checkPin() {
+  const pin = document.getElementById('pinInput').value;
+  if(pin === '8816'){  // <-- Change '1234' to your desired PIN
+    window.location.href = "https://photos.google.com/share/AF1QipNuMji8Mlfj7PWCgUmx7mHmOvKGxnipyLXlUrhxi-1bcq2a-z0cbtGNO28MkrP7Eg?key=WVp1dUtsY282WGt3V0RITXpZcUMtRnZTTFZLOWRR"; // <-- Replace with your Google Photos album link
+  } else {
+    alert('Incorrect PIN. Try again.');
+  }
+}
+</script>
+
+</body>
+</html>
